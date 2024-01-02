@@ -19,15 +19,12 @@ export default function App() {
   const addContact = ({ name, number }) => {
     const normalizedName = name.toLowerCase();
 
-    let isAdded = false;
-    contacts.forEach(el => {
-      if (el.name.toLowerCase() === normalizedName) {
-        alert(`${name} is already in contacts`);
-        isAdded = true;
-      }
+    const isAdded = this.state.contacts.find(el => {
+      return (el.name.toLowerCase() === normalizedName) 
     });
 
     if (isAdded) {
+      alert(`${name} is already in contacts`);
       return;
     }
     const contact = {
