@@ -19,7 +19,7 @@ export default function App() {
   const addContact = ({ name, number }) => {
     const normalizedName = name.toLowerCase();
 
-    const isAdded = this.state.contacts.find(el => {
+    const isAdded = contacts.find(el => {
       return (el.name.toLowerCase() === normalizedName) 
     });
 
